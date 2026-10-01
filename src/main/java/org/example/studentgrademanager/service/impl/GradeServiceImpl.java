@@ -50,16 +50,15 @@ public class GradeServiceImpl implements GradeService {
         return totalMarks / numberOfGradesRecordedForStudent;
     }
 
-
     @Override
     public void recordGrade(GradeJournal gradeJournal) {
 
         gradeJournal.displayStudentsList();
-        System.out.println( "--------------------\n-----Enter the studentId of the Student to record Grade -----");
+        System.out.println("--------------------\n-----Enter the studentId of the Student to record Grade -----");
         System.out.print("Enter student ID: ");
         int studentId = UserInputHelperUtil.readInteger("Enter student ID: ");
 
-        Student student = studentService.findStudentById( gradeJournal, studentId);
+        Student student = studentService.findStudentById(gradeJournal, studentId);
 
         if (student == null) {
             System.out.println("Student not found.");
@@ -67,7 +66,7 @@ public class GradeServiceImpl implements GradeService {
         }
 
         gradeJournal.displaySubjectsList();
-        System.out.println( "--------------------");
+        System.out.println("--------------------");
         System.out.print("Enter subject ID: ");
         int subjectId = UserInputHelperUtil.readInteger("Enter subject ID: ");
 
@@ -96,8 +95,8 @@ public class GradeServiceImpl implements GradeService {
         Grade grade = new Grade(student, subject, mark);
 
         gradeJournal.addGradeToList(grade);
-        System.out.println( student.getStudentFirstName() + " " + student.getStudentLastName()
-                + " has a new grade of " + mark + " marks in " + subject.getSubjectName() );
+        System.out.println(student.getStudentFirstName() + " " + student.getStudentLastName()
+                + " has a new grade of " + mark + " marks in " + subject.getSubjectName());
 
     }
 
@@ -105,7 +104,7 @@ public class GradeServiceImpl implements GradeService {
     public void displayStudentAverageMark(GradeJournal gradeJournal) {
 
         gradeJournal.displayStudentsList();
-        System.out.println( "--------------------\n-----Enter the studentId of the Student to obtain his avaerage marks -----");
+        System.out.println("--------------------\n-----Enter the studentId of the Student to obtain his avaerage marks -----");
 
 
         System.out.print("Enter student ID: ");
@@ -125,7 +124,7 @@ public class GradeServiceImpl implements GradeService {
             return;
         }
 
-        System.out.println("Average marks for " + student.getStudentFirstName() + " " +student.getStudentLastName() + " : " + average);
+        System.out.println("Average marks for " + student.getStudentFirstName() + " " + student.getStudentLastName() + " : " + average);
 
         if (average >= 40) {
             System.out.println("Result: PASS");
@@ -134,17 +133,16 @@ public class GradeServiceImpl implements GradeService {
         }
     }
 
-
     @Override
     public void updateGrade(GradeJournal gradeJournal) {
 
         gradeJournal.displayStudentsList();
-        System.out.println( "--------------------\n-----Enter the studentId of the Student to update Grade -----");
+        System.out.println("--------------------\n-----Enter the studentId of the Student to update Grade -----");
 
         System.out.print("Enter student ID: ");
         int studentId = UserInputHelperUtil.readInteger("Enter student ID: ");
 
-        Student student = studentService.findStudentById( gradeJournal, studentId);
+        Student student = studentService.findStudentById(gradeJournal, studentId);
 
         if (student == null) {
             System.out.println("Student not found.");
@@ -179,22 +177,21 @@ public class GradeServiceImpl implements GradeService {
 
         grade.setMark(newGrade);
 
-        System.out.println( student.getStudentFirstName() + " " + student.getStudentLastName()
-                + " has a new grade of " + newGrade + " marks in " + subject.getSubjectName() );
+        System.out.println(student.getStudentFirstName() + " " + student.getStudentLastName()
+                + " has a new grade of " + newGrade + " marks in " + subject.getSubjectName());
 
     }
-
 
     @Override
     public void removeGrade(GradeJournal gradeJournal) {
 
         gradeJournal.displayStudentsList();
-        System.out.println( "--------------------\n-----Enter the studentId of the Student to remove Grade -----");
+        System.out.println("--------------------\n-----Enter the studentId of the Student to remove Grade -----");
 
         System.out.print("Enter student ID: ");
         int studentId = UserInputHelperUtil.readInteger("Enter student ID: ");
 
-        Student student = studentService.findStudentById( gradeJournal, studentId);
+        Student student = studentService.findStudentById(gradeJournal, studentId);
 
         if (student == null) {
             System.out.println("Student not found.");
@@ -220,14 +217,12 @@ public class GradeServiceImpl implements GradeService {
         }
 
 
-
-        System.out.println( "Grade of " + grade.getMark() + " marks for "
+        System.out.println("Grade of " + grade.getMark() + " marks for "
                 + student.getStudentFirstName() + " " + student.getStudentLastName()
-                  +" in " + subject.getSubjectName() + " as been removed" );
+                + " in " + subject.getSubjectName() + " as been removed");
 
         gradeJournal.getGradesList().remove(grade);
     }
-
 
     @Override
     public void showTopScoringStudent(GradeJournal gradeJournal) {
@@ -256,7 +251,6 @@ public class GradeServiceImpl implements GradeService {
                 "Average: " + highestAverage
         );
     }
-
 
     @Override
     public void showLastGradeEntered(GradeJournal gradeJournal) {

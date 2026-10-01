@@ -10,17 +10,17 @@ public class UserInputHelperUtil {
     public static void displayUserChoices() {
 
         System.out.print("""
-
-            1. Add Student
-            2. Record Grade
-            3. Calculate Student Average
-            4. Update Grade
-            5. Remove Grade
-            6. Show Top Scoring Student
-            7. Show Last Grade Entered
-            8. Exit
-
-            Enter your choice:  """);
+                
+                1. Add Student
+                2. Record Grade
+                3. Calculate Student Average
+                4. Update Grade
+                5. Remove Grade
+                6. Show Top Scoring Student
+                7. Show Last Grade Entered
+                8. Exit
+                
+                Enter your choice:  """);
     }
 
     public static int readInteger(String errorMessage) {

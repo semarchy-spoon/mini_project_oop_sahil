@@ -3,9 +3,9 @@ package main.java.org.example.studentgrademanager.service.impl;
 import main.java.org.example.studentgrademanager.dto.GradeJournal;
 import main.java.org.example.studentgrademanager.dto.Student;
 
-
 import main.java.org.example.studentgrademanager.service.StudentService;
 import main.java.org.example.studentgrademanager.util.UserInputHelperUtil;
+
 public class StudentServiceImpl implements StudentService {
 
     @Override
@@ -21,7 +21,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void addNewStudent(GradeJournal gradeJournal) {
 
-        System.out.println( "\n----Enter Details of the Student to add --------\n");
+        System.out.println("\n----Enter Details of the Student to add --------\n");
 
         System.out.print("Enter student ID: ");
         int studentId = UserInputHelperUtil.readInteger("Enter student ID: ");
@@ -46,7 +46,7 @@ public class StudentServiceImpl implements StudentService {
 
         gradeJournal.addStudentToList(student);
 
-        System.out.println( "\nStudent " + firstName +" " + lastName + " with studentId "
-                + studentId + " has been created " );
+        System.out.println("\nStudent " + firstName + " " + lastName + " with studentId "
+                + studentId + " has been created ");
     }
 }

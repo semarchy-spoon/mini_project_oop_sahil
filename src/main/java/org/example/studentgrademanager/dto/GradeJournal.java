@@ -32,6 +32,7 @@ public class GradeJournal {
     public List<Grade> getGradesList() {
         return grades;
     }
+
     public List<Student> getStudentsList() {
         return students;
     }

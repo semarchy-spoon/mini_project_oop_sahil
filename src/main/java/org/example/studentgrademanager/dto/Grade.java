@@ -32,6 +32,7 @@ public class Grade {
 
     @Override
     public String toString() {
-        return student.getStudentFirstName() + " " + student.getStudentLastName() + "has " + mark + " marks in " + subject.getSubjectName() ;
+        return student.getStudentFirstName() + " " + student.getStudentLastName()
+                + "has " + mark + " marks in " + subject.getSubjectName();
     }
 }
